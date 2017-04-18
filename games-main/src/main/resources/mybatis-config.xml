@@ -26,7 +26,7 @@
     	<!-- 
         <package name="com.eht.hg.mybatis.domain"/>
          -->
-	    <typeAlias alias="UUIDTypeHandler"          type="com.eht.y1da.mybatis.utils.UUIDTypeHandler" />
+	    <typeAlias alias="UUIDTypeHandler"          type="com.games.world.mybatis.utils.UUIDTypeHandler" />
          
         <!-- 
         <typeAlias alias="UUID"                     type="java.util.UUID" />
@@ -42,13 +42,13 @@
 
 
   <typeHandlers >
-      <package name="com.eht.y1da.mybatis.utils"/>
+      <package name="com.games.world.mybatis.utils"/>
   </typeHandlers>
 
      
     <mappers>
          <!-- <package name="mapper/**.xml"/> -->
-		<mapper resource="mapper/ActivityMapper.xml" />
+		 <mapper resource="mapper/UsrMapper.xml" /> 
     </mappers>
 </configuration>  
 

@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.games.world</groupId>
-	<artifactId>games-boot</artifactId>
+	<artifactId>games-world-main</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>games-main</name>
+	<name>games-world-main</name>
 	<description>games  project for Spring Boot</description>
 
 	<parent>
@@ -62,18 +62,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-jetty</artifactId> 
-			</dependency> -->
-		<!-- 热部署 -->
-		<!-- hot deploy 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>-->
-		<!--jpa -->
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-data-jpa</artifactId> 
-			</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
@@ -94,20 +82,6 @@
 			<version>${mybatis-spring.version}</version>
 		</dependency>
 
-		<!--activemq -->
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-jms</artifactId> 
-			</dependency> <dependency> <groupId>org.apache.activemq</groupId> <artifactId>activemq-broker</artifactId> 
-			</dependency> -->
-		<!--redis+session -->
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-redis</artifactId> 
-			</dependency> <dependency> <groupId>org.springframework.session</groupId> 
-			<artifactId>spring-session</artifactId> </dependency> -->
-
-		<!--tomcat -->
-		<!-- <dependency> <groupId>org.apache.tomcat.embed</groupId> <artifactId>tomcat-embed-jasper</artifactId> 
-			<scope>provided</scope> </dependency> <dependency> <groupId>javax.servlet</groupId> 
-			<artifactId>jstl</artifactId> </dependency> -->
-		<!--common tools -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -145,9 +119,6 @@
 			<artifactId>weixin-java-mp</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-		<!-- <dependency> <groupId>me.chanjar</groupId> <artifactId>weixin-java-mp</artifactId> 
-			<version>${weixin-java-mp.version}</version> </dependency> -->
-		<!-- xml related -->
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>

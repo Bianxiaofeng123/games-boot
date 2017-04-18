@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.games.world</groupId>
-    <artifactId>games-mp</artifactId>
+    <artifactId>games-world-mp</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>games-mp</name>
+    <name>games-world-mp</name>
     <description>games mp project for Spring Boot</description>
 
      <parent>
