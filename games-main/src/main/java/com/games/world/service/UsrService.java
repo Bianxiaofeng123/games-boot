@@ -11,7 +11,7 @@ import com.games.world.mapper.UsrMapper;
 public class UsrService {
 	@Autowired
 	UsrMapper usrMapper;
-	public Map<String, Object> login() {
+	public Map<String, Object> login(Map<String, Object> params) {
 		return null;
 	}
 }
