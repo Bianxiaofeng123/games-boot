@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.games.world.mapper.UsrMapper">
 
-	<select id="getLocation" parameterType="java.util.Map" resultType="java.lang.Boolean">
-		select * from tellyou.location;
+	<select id="login" parameterType="java.util.Map" resultType="java.util.Map">
+		select name from tellyou.yys_usr where username=#{username} and password=#{password}
 	</select>
 
 </mapper>

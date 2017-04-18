@@ -12,6 +12,10 @@ public class UsrService {
 	@Autowired
 	UsrMapper usrMapper;
 	public Map<String, Object> login(Map<String, Object> params) {
-		return null;
+		Map<String, Object>loginnm=usrMapper.login(params);
+		if (loginnm!=null) {
+			return loginnm;
+		}
+		return loginnm;
 	}
 }

@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.games.world.model.JsonResult;
 import com.games.world.model.Validation;
 import com.games.world.service.UsrService;
 
 /**
- * 职称考试
+ * 用户
  *
  */
 @RestController
-@RequestMapping(value = "/usr")
+@RequestMapping(value = "/")
 public class UsrController {
 	
 	@Autowired
@@ -27,18 +28,25 @@ public class UsrController {
 	MessageSource messageSource;
 	
 	/**
-	 * 查询题库章节列表
+	 * 登录
 	 * @param parmas
 	 * @param pager
 	 * @return
 	 */
-	@RequestMapping(value = "/chapters", method = RequestMethod.GET)
-	public Map<String, Object> chapters(@RequestParam Map<String, Object> parmas){
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public JsonResult login(@RequestParam Map<String, Object> parmas){
+		JsonResult jsonResult=new JsonResult();
 		StringBuffer errMsg = new StringBuffer();
-		if(!Validation.checkBlank(parmas, errMsg, messageSource, "uopid")){
+		if(!Validation.checkBlank(parmas, errMsg, messageSource, "username","password")){
 			throw new IllegalArgumentException(errMsg.toString());
 		}
-		return usrService.login(parmas);
+		Map<String, Object> loginMap=usrService.login(parmas);
+		if (usrService.login(parmas)!=null) {
+			jsonResult.put(loginMap);
+		}else {
+			jsonResult.putFailed("账号/密码错误");
+		}
+		return jsonResult;
 	}
 		
 	

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UsrMapper {
-	boolean login (Map<String, Object> params);
+	public Map<String, Object> login (Map<String, Object> params);
 	
 	public Map<String, Object> getLocation(Map<String, Object> params);
 }
