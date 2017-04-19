@@ -21,36 +21,6 @@ public class Constants {
 	public static final String publicUrl = "publicUrl";
 	public static final String publicPipeline = "publicPipeline";
 
-	final static public String QRCODE_CHARSET = "UTF-8";
-	// 生成二维码格式
-	final static public String QRCODE_FORMAT_NAME = "JPG";
-	// 二维码尺寸
-	final static public int QRCODE_SIZE = 430;
-	// 二维码LOGO宽度
-	final static public int QRCODE_LOGO_WIDTH = 150;
-	// 二维码LOGO高度
-	final static public int QRCODE_LOGO_HEIGHT = 150;
-	// 分享二维码头像与二维码宽度
-	final static public int QRCODE_HD_WIDTH = 80;
-	// 分享二维码头像与二维码高度
-	final static public int QRCODE_HD_HEIGHT = 80;
-
-	// 客服登录名
-	final static public String CS_NAME = "cs001";
-	// 客服登录密码
-	final static public String CS_PWD = "b01f6c9f53b211e6817300163e010f1e";
-
-	// 高德地图
-	public static final String GAODE_KEY = "cf0e7ec69e8c895f0f1d19cc18e86e9a";
-	// POI类型 综合医院和专科医院（查询医院所用的type）
-	public static final String GAODE_SEARCH_TYPES = "0901|0902";
-
-	public static final String GAODE_REGEO_URL = "http://restapi.amap.com/v3/geocode/regeo?output=json&key="
-			+ Constants.GAODE_KEY + "&location=%1s,%2s";
-
-	// word导出模板保存地址
-	public static final String HRULE_TEMPLATE_FILE = "hrule_template.xml";
-
 	public static List<Map<String, Object>> uopidsConstants() {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 		Map<String, Object> map1 = new HashMap<>();
@@ -73,5 +43,35 @@ public class Constants {
 		resultList.add(map4);
 		return resultList;
 	}
+	// -------------------------------------百度ocr--------------------------------------
+		// APP_ID
+		public static final String BAIDU_OCR_APP_ID = "9402809";
+		// AK
+		public static final String BAIDU_OCR_API_KEY = "svWDc1plyHgWlKD2MmGf9nG0";
+		// SK
+		public static final String BAIDU_OCR_SECRET_KEY = "39yfKa49bmMFyjPHxtZg4v95ygeny5C1";
+		// AK_ID
+		public static final String BAIDU_OCR_ACCESS_KEY_ID = "ef503624977f4a198a0e1b2e2c0b3c9e";
+		//检测朝向
+		public static final String BAIDU_OCR_DETECT_DIRECTION = "false";
+		// 语言
+		// - CHN_ENG：中英文混合；
+		// - ENG：英文；
+		// - POR：葡萄牙语；
+		// - FRE：法语；
+		// - GER：德语；
+		// - ITA：意大利语；
+		// - SPA：西班牙语；
+		// - RUS：俄语；
+		// - JAP：日语
+		public static final String BAIDU_OCR_LANGUAGE_TYPE = "CHN_ENG";
+
+		// -------------------------------------百度ocr--------------------------------------
+		// 高德地图
+		public static final String GAODE_KEY = "cf0e7ec69e8c895f0f1d19cc18e86e9a";
+		public static final String GAODE_REGEO_URL = "http://restapi.amap.com/v3/geocode/regeo?output=json&key="+ GAODE_KEY +"&location=%1s,%2s";
+		public static final String GAODE_TEXT_URL = "http://restapi.amap.com/v3/place/text?output=json&key="+ GAODE_KEY+"&keywords=%1s";
+		public static final String GAODE_GEO_URL = "http://restapi.amap.com/v3/geocode/geo?output=json&key="+ GAODE_KEY+"&address=";
+		
 
 }

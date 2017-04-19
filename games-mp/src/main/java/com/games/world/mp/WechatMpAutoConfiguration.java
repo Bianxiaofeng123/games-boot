@@ -79,20 +79,8 @@ public class WechatMpAutoConfiguration {
 //			.rule().msgType(WxConsts.XML_MSG_TEXT).end()
 			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_SUBSCRIBE).handler(subscribehandler).end() // 关注后发送欢迎文字信息
 			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_UNSUBSCRIBE).handler(unsubscribehandler).end() // 取消关注后的动作
-			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.BUTTON_CLICK).eventKey("V1001_NEWS").handler(newshandler).end()
-			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.BUTTON_CLICK).eventKey("V1002_MYCARD").handler(myCardHandler).end()
 			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_SCAN).handler(scanhandler).end()
 			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_LOCATION).handler(locationHandler).end() //根据经纬度，调用高德地图，获取用户的位置信息。
-			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.BUTTON_CLICK).eventKey("V1003_INVITEIMAGE").handler(inviteImageHandler).end() //推荐有奖，执行inviteImageHandler。
-			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.BUTTON_CLICK).eventKey("V1004_MANAGER").handler(managerHandler).end() // 管理员入口
-//			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_SUBSCRIBE).handler(welcomeNewshandler).end()
-//			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_SUBSCRIBE).handler(welcomeNewshandler).end() // 关注后发送欢迎文字信息
-//          .rule().async(false).content("图片").handler(imageHandler).end()          			//针对图片消息，执行imageHandler。
-//          .rule().async(false).content("o").handler(oauth2handler).end()           			//针对o，执行oauth2handler。
-//			.rule().async(false).msgType(WxConsts.MASS_MSG_TEXT).handler(textHandler).end()
-//			.rule().async(false).msgType(WxConsts.XML_MSG_TEXT).handler(textHandler).end() //针对text消息，执行textHandler。
-//			.rule().async(false).msgType(WxConsts.CUSTOM_MSG_IMAGE).handler(imageHandler).end()
-			
 			// 用户领取卡券
 			.rule().async(false).msgType(WxConsts.XML_MSG_EVENT).event(WxConsts.EVT_USER_GET_CARD).handler(getCardHandler).end()
 			// 用户删除卡券

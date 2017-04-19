@@ -12,11 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.games.world.model.JsonResult;
 import com.games.world.model.Validation;
 import com.games.world.service.UsrService;
+import com.games.world.util.OCRUtils;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 用户
  *
  */
+@Slf4j
 @RestController
 @RequestMapping(value = "/")
 public class UsrController {
@@ -48,6 +52,17 @@ public class UsrController {
 		}
 		return jsonResult;
 	}
-		
+	/**
+	 * 测试
+	 * @param parmas
+	 * @param pager
+	 * @return
+	 */
+	@RequestMapping(value = "/text", method = RequestMethod.GET)
+	public JsonResult text(@RequestParam Map<String, Object> parmas) throws Exception{
+		log.info("parmas{}",parmas);
+		JsonResult jsonResult=new JsonResult();
+		return jsonResult.put(OCRUtils.Transform(parmas));
+	}
 	
 }
