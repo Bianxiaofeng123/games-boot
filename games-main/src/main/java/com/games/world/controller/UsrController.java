@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.games.world.model.JsonResult;
 import com.games.world.model.Validation;
 import com.games.world.service.UsrService;
-import com.games.world.util.OCRUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -62,7 +61,8 @@ public class UsrController {
 	public JsonResult text(@RequestParam Map<String, Object> parmas) throws Exception{
 		log.info("parmas{}",parmas);
 		JsonResult jsonResult=new JsonResult();
-		return jsonResult.put(OCRUtils.Transform(parmas));
+		String url=parmas.get("url").toString();
+		return jsonResult.put(url);
 	}
 	
 }

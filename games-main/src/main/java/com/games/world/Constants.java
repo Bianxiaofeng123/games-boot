@@ -7,13 +7,14 @@ import java.util.Map;
 
 public class Constants {
 	// 七牛
-	final static public String QINIU_ACCESS_KEY = "";
+	final static public String QINIU_ACCESS_KEY = "oeBTarE2Eg6v5cTY3EJES1Z05E0HYNquq0u--Fgm";
 	// 七牛
-	final static public String QINIU_SECRET_KEY = "";
+	final static public String QINIU_SECRET_KEY = "1LTeWOCE82D88SfO2uFRwGJ1q9HOOoDIN4j4NelJ";
 	// 私有图片获取过期默认时间（秒）
 	final static public long tokenFailedSec = 3600;
 	// 图片上传校验图片大小默认值 b （2m）
 	final static public long checkFileLong = 1024 * 1024 * 2;
+	
 	public static final String privateBucketname = "privateBucketname";
 	public static final String publicBucketname = "publicBucketname";
 	public static final String publicAcsResBucket = "publicAcsResBucket";

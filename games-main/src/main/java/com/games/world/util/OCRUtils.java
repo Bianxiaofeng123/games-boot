@@ -23,7 +23,7 @@ public class OCRUtils {
 	 * @return
 	 * @throws Exception
 	 */
-	public static Map<String, Object> Transform(Map<String, Object> params) throws Exception {
+	public static Map<String, Object> Transform(String phurl) throws Exception {
 		// 初始化一个OcrClient
 		AipOcr client = new AipOcr(Constants.BAIDU_OCR_APP_ID, Constants.BAIDU_OCR_API_KEY,
 				Constants.BAIDU_OCR_SECRET_KEY);
@@ -35,7 +35,7 @@ public class OCRUtils {
 		options.put("detect_direction", Constants.BAIDU_OCR_DETECT_DIRECTION);
 		options.put("language_type", Constants.BAIDU_OCR_LANGUAGE_TYPE);
 		// new一个URL对象
-		URL url = new URL(params.get("picurl").toString());
+		URL url = new URL(phurl);
 		// 打开链接
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		// 设置请求方式为"GET"
