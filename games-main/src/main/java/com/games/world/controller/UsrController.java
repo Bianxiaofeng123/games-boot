@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.games.world.mapper.UsrMapper;
 import com.games.world.model.JsonResult;
 import com.games.world.model.Validation;
 import com.games.world.service.UsrService;
@@ -29,6 +30,9 @@ public class UsrController {
 	
 	@Autowired
 	MessageSource messageSource;
+	
+	@Autowired
+	UsrMapper usrMapper;
 	
 	/**
 	 * 登录
@@ -65,4 +69,16 @@ public class UsrController {
 		return jsonResult.put(url);
 	}
 	
+	/**
+	 * 测试
+	 * @param parmas
+	 * @param pager
+	 * @return
+	 */
+	@RequestMapping(value = "/usrs", method = RequestMethod.GET)
+	public String usrs(@RequestParam Map<String, Object> parmas) throws Exception{
+		log.info("parmas{}",parmas);
+		usrMapper.getUsrs();
+		return "ok";
+	}
 }

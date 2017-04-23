@@ -26,7 +26,6 @@ public class FileUtils {
 		FileInputStream fis = new FileInputStream(file);
 
 		// 定义文件输出流，用来把信息写入afterfile文件中
-
 		FileOutputStream fos = new FileOutputStream(afterfile);
 
 		// 文件缓存区

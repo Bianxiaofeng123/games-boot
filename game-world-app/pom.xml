@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.games.world</groupId>
-	<artifactId>games-world-main</artifactId>
+	<artifactId>game-world-app</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>games-world-main</name>
+	<name>game-world-app</name>
 	<description>games  project for Spring Boot</description>
 
 	<parent>
@@ -17,9 +17,9 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.3.RELEASE</version>
 	</parent>
-
+	
 	<properties>
-		<start-class>com.games.world.Application</start-class>
+		<start-class>org.game.world.app.Application</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<mybatis-spring.version>1.1.1</mybatis-spring.version>
@@ -38,12 +38,6 @@
 
 	<!-- Add typical dependencies for a web application -->
 	<dependencies>
-		<dependency>
-			<groupId>com.games.world</groupId>
-			<artifactId>games-mp</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -97,7 +91,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- 消息队列Apache ActiveMQ 依赖 -->
 		<!--monitor -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -112,12 +105,6 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-joda</artifactId>
-		</dependency>
-		<!-- weixin-java-tools -->
-		<dependency>
-			<groupId>com.github.binarywang</groupId>
-			<artifactId>weixin-java-mp</artifactId>
-			<version>2.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
@@ -136,7 +123,8 @@
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
 		</dependency>
-<!-- 热部署 -->
+		
+		<!-- 热部署 -->
 		<!-- hot deploy -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -167,181 +155,17 @@
 			<version>${http-request.version}</version>
 		</dependency>
 
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- http://mvnrepository.com/artifact/org.yaml/snakeyaml -->
-		<dependency>
-			<groupId>org.yaml</groupId>
-			<artifactId>snakeyaml</artifactId>
-		</dependency>
-
-
-		<!-- http://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
-		<dependency>
-			<groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
-			<version>2.4</version>
-			<classifier>jdk15</classifier>
-		</dependency>
-
-		<!-- http://mvnrepository.com/artifact/jdom/jdom -->
-		<dependency>
-			<groupId>jdom</groupId>
-			<artifactId>jdom</artifactId>
-			<version>1.1</version>
-		</dependency>
-
-		<!-- http://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>3.1</version>
-		</dependency>
-
-
-		<!-- 七牛begin -->
-		<dependency>
-			<groupId>com.qiniu</groupId>
-			<artifactId>qiniu-java-sdk</artifactId>
-			<version>7.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore-ab</artifactId>
-			<version>4.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>fluent-hc</artifactId>
-			<version>4.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>org.json</artifactId>
-			<version>chargebee-1.0</version>
-		</dependency>
-		<!-- 七牛end -->
-
-		<!-- zxing begin -->
-		<dependency>
-			<groupId>com.google.zxing</groupId>
-			<artifactId>core</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.zxing</groupId>
-			<artifactId>javase</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<!-- zxing end -->
-
-		<!-- redis 使用标签形式的绑定 -->
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-redis</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-		</dependency>
-
-		<!-- 科大讯飞语音转换 -->
-		<dependency>
-			<groupId>kada</groupId>
-			<artifactId>json-jena</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>kada</groupId>
-			<artifactId>Msc</artifactId>
-			<version>1.0</version>
-		</dependency>
-
-		<!-- 根据file byte 判断文件类型的库 -->
-		<dependency>
-			<groupId>jmimemagic</groupId>
-			<artifactId>jmimemagic</artifactId>
-			<version>0.1.2</version>
-		</dependency>
-		<!-- excel 生成 https://mvnrepository.com/artifact/org.apache.poi/poi -->
-		<!-- <dependency> <groupId>org.apache.poi</groupId> <artifactId>poi</artifactId> 
-			<version>3.10-FINAL</version> </dependency> <dependency> <groupId>org.apache.poi</groupId> 
-			<artifactId>poi-ooxml</artifactId> <version>3.10-FINAL</version> </dependency> 
-			word 生成 <dependency> <groupId>org.freemarker</groupId> <artifactId>freemarker</artifactId> 
-			</dependency> -->
-			
-		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.10</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
-		
-		<!-- <dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-core</artifactId>
-			<version>1.3</version>
-		</dependency> -->
-		
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-		<!-- <dependency> <groupId>org.apache.httpcomponents</groupId> <artifactId>httpclient</artifactId> 
-			<version>4.5.2</version> </dependency> -->
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-		<!-- <dependency> <groupId>org.apache.httpcomponents</groupId> <artifactId>httpcore</artifactId> 
-			<version>4.4.4</version> </dependency> -->
-		<!-- https://mvnrepository.com/artifact/org.json/json -->
-		
-		<!-- <dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160810</version>
-		</dependency> -->
-		
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-		<dependency>
-			<groupId>com.squareup.okhttp3</groupId>
-			<artifactId>okhttp</artifactId>
-			<version>3.2.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.squareup.okio/okio -->
-		<dependency>
-			<groupId>com.squareup.okio</groupId>
-			<artifactId>okio</artifactId>
-			<version>1.6.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.squareup.okio</groupId>
-			<artifactId>okio</artifactId>
-			<version>1.6.0</version>
-		</dependency>
-		 <!-- <dependency>
-			<groupId>com.face.sdk</groupId>
-			<artifactId>com.face.sdk</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.baidu.aip.ocr</groupId>
-			<artifactId>com.baidu.aip.ocr</artifactId>
-			<version>1.0</version>
-		</dependency>   -->
 	</dependencies>
 
 	<!-- Package as an executable jar -->
@@ -408,3 +232,4 @@
 		</repository>
 	</repositories>
 </project>
+
