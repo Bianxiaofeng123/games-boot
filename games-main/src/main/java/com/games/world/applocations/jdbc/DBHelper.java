@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DBHelper {  
     public static final String url = "jdbc:mysql://192.168.14.36/tellyou?characterEncoding=utf8&useSSL=true";  
     public static final String name = "com.mysql.jdbc.Driver";  
-    public static final String user = "root";  
+    public static final String user = "dev01";  
     public static final String password = "123456";  
   
     public Connection conn = null;  
