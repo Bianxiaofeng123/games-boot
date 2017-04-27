@@ -1,4 +1,4 @@
-package com.games.world.applocations.jdbc.main;
+package org.game.world.app.jdbc.main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,11 +14,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import org.game.world.app.jdbc.JDBCResult;
+import org.game.world.app.jdbc.sql.UsrSql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
-
-import com.games.world.applocations.jdbc.JDBCResult;
-import com.games.world.applocations.jdbc.sql.UsrSql;
 
 public class GamesMain {
 

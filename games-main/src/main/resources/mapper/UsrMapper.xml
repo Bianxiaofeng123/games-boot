@@ -3,10 +3,10 @@
 <mapper namespace="com.games.world.mapper.UsrMapper">
 
 	<select id="login" parameterType="java.util.Map" resultType="java.util.Map">
-		select name from tellyou.yys_usr where username=#{username} and password=#{password}
+		select name from yys_usr where username=#{username} and password=#{password}
 	</select>
 	<select id="getUsrs" parameterType="java.util.Map" resultType="java.util.Map">
-		select * from tellyou.yys_usr ;
+		select * from yys_usr ;
 	</select>
 
 </mapper>

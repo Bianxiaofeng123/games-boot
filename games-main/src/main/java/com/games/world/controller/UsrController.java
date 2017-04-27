@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.games.world.mapper.UsrMapper;
 import com.games.world.model.JsonResult;
 import com.games.world.model.Validation;
 import com.games.world.service.UsrService;
@@ -31,8 +30,7 @@ public class UsrController {
 	@Autowired
 	MessageSource messageSource;
 	
-	@Autowired
-	UsrMapper usrMapper;
+	
 	
 	/**
 	 * 登录
@@ -76,9 +74,9 @@ public class UsrController {
 	 * @return
 	 */
 	@RequestMapping(value = "/usrs", method = RequestMethod.GET)
-	public String usrs(@RequestParam Map<String, Object> parmas) throws Exception{
+	public String usrs(@RequestParam Map<String, Object> parmas){
 		log.info("parmas{}",parmas);
-		usrMapper.getUsrs();
+		usrService.usrs();
 		return "ok";
 	}
 }
