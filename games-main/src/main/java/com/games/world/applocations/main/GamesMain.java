@@ -39,18 +39,18 @@ public class GamesMain {
 		// 添加面板
 		frame.add(panel);
 		// 调用用户定义的方法并添加组件到面板
-		gamesMain.placeComponents(panel,frame);
+		gamesMain.placeComponents(panel, frame);
 		// 设置界面可见
 		frame.setVisible(true);
 	}
-	
-	//login
-	public void placeComponents(JPanel panel,JFrame frame) {
+
+	// login
+	public void placeComponents(JPanel panel, JFrame frame) {
 		GamesMain gamesMain = new GamesMain();
 		// 布局部分我们这边不多做介绍 这边设置布局为 null
 		panel.setLayout(null);
 		// 设置面板的边框
-		panel.setBorder(new EmptyBorder(5,5,5,5));
+		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		// 创建 JLabel
 		JLabel userLabel = new JLabel("User:");
 		// 这个方法定义了组件的位置。 setBounds(x, y, width, height) x 和 y 指定左上角的新位置，由 width和
@@ -82,11 +82,11 @@ public class GamesMain {
 					passwordBuffer.append(passwordText.getPassword()[i]);
 				}
 				Map<String, Object> loginResultMap = gamesMain.login(userText.getText(), passwordBuffer.toString());
-				boolean loginfg=(boolean)loginResultMap.get("loginfg");
+				boolean loginfg = (boolean) loginResultMap.get("loginfg");
 				if (loginfg) {
 					// 关闭之前的窗口
 					frame.setVisible(false);
-					gamesMain.loginFrame(loginResultMap.get("name").toString());
+					gamesMain.loginFrame(loginResultMap.get("id").toString());
 				} else {
 					// error错误提示
 					JOptionPane.showMessageDialog(panel, "账号/密码错误", "提示", JOptionPane.WARNING_MESSAGE);
@@ -98,9 +98,8 @@ public class GamesMain {
 
 	// login事件
 	public Map<String, Object> login(String Usrname, String Password) {
-		Map<String,Object> resultMap=new HashMap<>();
-		String sql = UsrSql.loginSQL(Usrname,Password);
-		System.out.println("sql:" + sql);
+		Map<String, Object> resultMap = new HashMap<>();
+		String sql = UsrSql.loginSQL(Usrname, Password);
 		List<Map<String, Object>> loginList = JDBCResult.jdbcList(sql);
 		System.out.println("loginMap:" + loginList);
 		if (loginList == null || loginList.size() < 1) {
@@ -114,9 +113,9 @@ public class GamesMain {
 			return resultMap;
 		}
 	}
-	
-	//index frame
-	private void loginFrame(String name) {
+
+	// index frame
+	private void loginFrame(String usrID) {
 		GamesMain gamesMain = new GamesMain();
 		JFrame indexFrame = new JFrame("index");
 		// Setting the width and height of frame
@@ -128,20 +127,24 @@ public class GamesMain {
 		// 添加面板
 		indexFrame.add(indexPanel);
 		// 调用用户定义的方法并添加组件到面板
-		gamesMain.indexComponents(indexPanel,indexFrame,name);
+		gamesMain.indexComponents(indexPanel, indexFrame, usrID);
 		// 设置界面可见
 		indexFrame.setVisible(true);
-		
 	}
-	
-	//index components
-	public void indexComponents(JPanel indexPanel,JFrame frame,String name) {
-		//查询index所需的所有数据（缺表，缺数据）
+
+	// index components
+	public void indexComponents(JPanel indexPanel, JFrame frame, String usrID) {
+		// 查询index所需的所有数据（缺表，缺数据）
+		String sql = UsrSql.getUsrInfo(usrID);
+		List<Map<String, Object>> usrInfo = JDBCResult.jdbcList(sql);
+		Map<String, Object> usrMap=usrInfo.get(0);
+		System.out.println(usrMap);
+		// getUsrInfo
 		indexPanel.setLayout(null);
 		// 设置面板的边框
-		indexPanel.setBorder(new EmptyBorder(5,5,5,5));
+		indexPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		// 创建 JLabel
-		JLabel headerLabel = new JLabel("用户:"+name);
+		JLabel headerLabel = new JLabel("用户:" + usrMap.get("name"));
 		// 这个方法定义了组件的位置。 setBounds(x, y, width, height) x 和 y 指定左上角的新位置，由 width和
 		headerLabel.setBounds(10, 10, 80, 40);
 		indexPanel.add(headerLabel);

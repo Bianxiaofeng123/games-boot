@@ -16,6 +16,7 @@ public class JDBCResult {
 	 */
 	@SuppressWarnings("unchecked")
 	public static List<Map<String, Object>> jdbcList(String sql) {
+		System.out.println(sql);
 		DBHelper db1 = new DBHelper(sql);// 创建DBHelper对象
 		try {
 			ResultSet ret = db1.pst.executeQuery();// 执行语句，得到结果集
