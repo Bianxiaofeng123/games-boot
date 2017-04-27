@@ -13,7 +13,6 @@
     <modules>
        <module>games-world-main</module>
        <module>games-world-mp</module>
-    <module>game-world-app</module>
   </modules>
   	
     
