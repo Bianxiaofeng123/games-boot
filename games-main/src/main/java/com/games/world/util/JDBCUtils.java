@@ -25,6 +25,7 @@ public class JDBCUtils {
 				System.out.println("list:" + list.toString());
 			}
 		} while (rs.next());
+		System.out.println("resultSetToList--->>>"+list);
 		return list;
 	}
 

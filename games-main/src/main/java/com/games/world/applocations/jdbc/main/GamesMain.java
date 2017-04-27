@@ -1,4 +1,4 @@
-package com.games.world.applocations.main;
+package com.games.world.applocations.jdbc.main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,12 +16,12 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.games.world.applocations.jdbc.JDBCResult;
-import com.games.world.applocations.sql.UsrSql;
+import com.games.world.applocations.jdbc.sql.UsrSql;
 
 public class GamesMain {
 
 	public static void main(String[] args) {
-		JFrame.setDefaultLookAndFeelDecorated(true);
+//		JFrame.setDefaultLookAndFeelDecorated(true);
 		start();
 		// System.out.println(gamesMain.jdbcList(UsrSql.GET_USR_ALL));
 	}
@@ -110,6 +110,7 @@ public class GamesMain {
 			System.out.println("success");
 			resultMap.put("loginfg", true);
 			resultMap.put("name", loginList.get(0).get("name"));
+			resultMap.put("id", loginList.get(0).get("id"));
 			return resultMap;
 		}
 	}
@@ -143,11 +144,18 @@ public class GamesMain {
 		indexPanel.setLayout(null);
 		// 设置面板的边框
 		indexPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		// 创建 JLabel
+		//用户昵称
 		JLabel headerLabel = new JLabel("用户:" + usrMap.get("name"));
-		// 这个方法定义了组件的位置。 setBounds(x, y, width, height) x 和 y 指定左上角的新位置，由 width和
-		headerLabel.setBounds(10, 10, 80, 40);
+		headerLabel.setBounds(10, 10, 150, 40);
 		indexPanel.add(headerLabel);
+		
+		JLabel careernmLabel = new JLabel("阶级:" + usrMap.get("careernm"));
+		careernmLabel.setBounds(200, 10, 150, 40);
+		indexPanel.add(careernmLabel);
+		
+		JLabel nameLabel = new JLabel("副职业:" + usrMap.get("name"));
+		nameLabel.setBounds(10, 40, 150, 40);
+		indexPanel.add(nameLabel);
 	}
 
 }

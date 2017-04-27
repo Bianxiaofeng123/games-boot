@@ -1,4 +1,4 @@
-package com.games.world.applocations.sql;
+package com.games.world.applocations.jdbc.sql;
 
 public class UsrSql {
 
@@ -15,8 +15,13 @@ public class UsrSql {
 	}
 
 	public static String getUsrInfo(String UsrId) {
-		return "SELECT i.id ,i.`name`,d.`name` designationnm,c.careernm FROM tellyou.usr_info i LEFT JOIN bas_designation d on d.id=i.designationid and d.delfg='0' LEFT JOIN bas_career c on c.id=i.career and c.`level`=i.careerlvl WHERE i.id = '"
-				+ UsrId + "'\"";
+		StringBuffer sql = new StringBuffer();
+		sql.append(" SELECT i.id ,i.`name`,d.`name` as designationnm , c.careernm ");
+		sql.append(" FROM tellyou.usr_info i ");
+		sql.append(" LEFT JOIN bas_designation d on d.id=i.designationid and d.delfg='0' ");
+		sql.append(" LEFT JOIN bas_career c on c.id=i.career and c.`level`=i.careerlvl ");
+		sql.append(" WHERE i.id = '" + UsrId + "'");
+		return sql.toString();
 	}
 
 }
