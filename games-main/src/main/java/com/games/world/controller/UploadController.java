@@ -21,7 +21,7 @@ public class UploadController {
 
 	/**
 	 * @author mas
-	 * 护工用户头像上传
+	 * 头像上传
 	 * /assis/location/portait/upload
 	 * @param file name:uploadfile values:??
 	 * return 

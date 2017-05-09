@@ -327,11 +327,6 @@
 			<artifactId>okio</artifactId>
 			<version>1.6.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.squareup.okio</groupId>
-			<artifactId>okio</artifactId>
-			<version>1.6.0</version>
-		</dependency>
 		 <!-- <dependency>
 			<groupId>com.face.sdk</groupId>
 			<artifactId>com.face.sdk</artifactId>
@@ -342,6 +337,13 @@
 			<artifactId>com.baidu.aip.ocr</artifactId>
 			<version>1.0</version>
 		</dependency>   -->
+		
+		<!-- leancloud.sdk -->
+        <dependency>
+            <groupId>cn.leancloud</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>0.1.6</version>
+        </dependency>
 	</dependencies>
 
 	<!-- Package as an executable jar -->
