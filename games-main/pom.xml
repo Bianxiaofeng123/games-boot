@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 
 	<name>games-world-main</name>
-	<description>games  project for Spring Boot</description>
+	<description>games  project for Spring Boot main</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
